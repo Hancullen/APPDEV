@@ -20,7 +20,7 @@ int main(int argc, char *argv[]){
 		return -1;
 	}*/
 	while(1){
-		ret = system("arecord -r16000 -c1 -d1 -f S16_LE data.wav");
+		ret = system("arecord -r16000 -c1 -d1 -f S16_LE -q data.wav");
 		if(WIFSIGNALED(ret) && WTERMSIG(ret)==SIGINT) break;
 		clearScreen();	// makes a fresh screen
 		fp = fopen("data.wav", "r");
